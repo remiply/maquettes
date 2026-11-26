@@ -2,12 +2,12 @@
 
 Dépôt public des maquettes de refonte que Rémi Pauly (EventLyx) envoie aux clubs et organisateurs.
 Publié sur GitHub Pages : https://remiply.github.io/maquettes/<dossier>/ (branche main, racine).
-Chaque dossier = un club. Les pages sont en `noindex,nofollow` et `robots.txt` bloque l'indexation.
+Chaque dossier = un club. ⚠️ Ce dépôt est PUBLIC (et servi en ligne) : aucune info commerciale interne ici (prix, CRM, notes sur les prospects). Les pages sont en `noindex,nofollow` et `robots.txt` bloque l'indexation.
 
 ## Avant de commencer : 3 contrôles bloquants
 1. **Contact vérifié** : un mail ou un téléphone du club, trouvé sur son site, ses mentions légales ou sa page Facebook. Sans contact, on s'arrête là : pas de maquette.
 2. **Pas déjà contacté** : vérifier dans Gmail (boîte EventLyx, `in:sent` sur 12 mois) et dans le CRM que le club n'a pas déjà reçu une offre de site.
-3. **Hors exclusions EventLyx** : pas d'Ariège à froid, pas de gros groupes (UTMB, ASO…), pas d'offices de tourisme ni de mairies.
+3. **Hors exclusions** : voir le skill « maquette-site-web ».
 
 ## Fabriquer la maquette
 1. Crée le dossier `<slug>/` (ex. `rocamadour`, `chierry`).
@@ -26,13 +26,12 @@ Chaque dossier = un club. Les pages sont en `noindex,nofollow` et `robots.txt` b
 ## Le mail de proposition (brouillon seulement, Rémi envoie)
 - Boîte EventLyx (contact.eventlyx@gmail.com), signature incluse, vouvoiement, court, à la première personne, ton de Rémi (jamais « mail d'IA »).
 - Le lien exact de la maquette, en clair, à la ligne. Un appel à l'action simple.
-- **Prix** : estimé selon le budget du club — plancher 300 €, moyenne 500 €, davantage pour un gros événement.
+- **Prix** : selon la règle de prix du skill « maquette-site-web » (privé, jamais dans ce dépôt public).
 - Toujours préciser que **de petites modifications sont possibles à l'achat**.
 - Aucun chiffre de preuve chatbot, pas de jargon technique.
 
 ## Après
-- Consigne pour Jordan (CRM) : fiche avec `offre: "site"`, statut « Contacté », relances J+10 / J+20 / J+30.
-- Ligne dans le Journal des agents (Notion) et tâche de relance dans le QG.
+- Suivi commercial : voir le skill « maquette-site-web ».
 
 ## Ne jamais
 - Envoyer un mail (brouillon seulement).
