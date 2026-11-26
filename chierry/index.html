@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Tamp&#x27;Trolls et Infernal du Bois : maquette de site par EventLyx</title>
+<link rel="preload" as="image" href="hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap">
+<style>
+/* VOICE  le club parle en « tu », sans chrono : on garde ce ton dans l'assistant
+   PICTURE le village de la course, Nesles-la-Montagne, assombri comme à la tombée de la nuit
+   COLOUR l'orange des vestes du club, un noir chaud, deux tons clairs ; l'orange vif seulement pour s'inscrire
+   TYPE   Archivo, très condensée et noire pour les titres */
+:root{color-scheme:light;--vin:#C2410C;--vind:#1F1611;--encre:#16100C;--creme:#FFF8F2;--safran:#FF7A1A;--sable:#FFE3CC;--ini:"CJC";--f:"Archivo","Arial Narrow",system-ui,sans-serif}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:60px}
+body{margin:0;background:var(--creme);color:var(--encre);font:17px/1.55 var(--f);overflow-x:clip;padding-bottom:72px}
+a{color:inherit}
+img{display:block;max-width:100%;height:auto}
+.nb{white-space:nowrap}
+:focus-visible{outline:3px solid var(--safran);outline-offset:3px}
+.maq{position:sticky;top:0;z-index:30;background:var(--encre);color:var(--creme);font-size:13px;line-height:1.35;padding:7px max(4vw,16px);display:flex;flex-wrap:wrap;gap:2px 14px;justify-content:space-between}
+.maq a{color:var(--safran)}
+.d{font-stretch:62%;font-weight:900;text-transform:uppercase;line-height:.88;letter-spacing:-.005em;margin:0}
+.in{max-width:none;margin:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:12px 28px;border-radius:999px;background:var(--safran);color:var(--encre);font-weight:800;font-size:18px;text-decoration:none;white-space:nowrap}
+.btn:hover{background:#fff}
+.btn.line{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px #fff}
+.btn.line:hover{background:#fff;color:var(--encre)}
+/* hero */
+.hero{position:relative;min-height:min(calc(100vh - 100px),900px);display:flex;flex-direction:column;justify-content:space-between;color:#fff;background:var(--vind) url(hero.jpg) center 62%/cover no-repeat;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(22,16,12,.74) 0,rgba(22,16,12,.46) 30%,rgba(22,16,12,.5) 52%,rgba(22,16,12,.94) 100%)}
+.top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:0 max(4vw,16px)}
+.logo{border-radius:0 0 18px 18px;overflow:hidden;flex:none;box-shadow:0 6px 20px rgba(22,16,12,.35)}
+.logo img{width:clamp(96px,11vw,150px);height:auto}
+.top ul{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:2px 4px;justify-content:flex-end}
+.top li a{display:block;padding:10px 14px;text-decoration:none;font-weight:700;border-radius:999px}
+.top li a:hover{background:rgba(255,255,255,.18)}
+.hero .txt{padding:24px max(4vw,16px) clamp(22px,4vw,44px)}
+.date{font-size:clamp(60px,13vw,190px);color:transparent;-webkit-text-stroke:2.5px #fff;margin-bottom:.06em}
+@supports not (-webkit-text-stroke:1px #fff){.date{color:#fff}}
+h1{font-size:clamp(34px,6.2vw,88px)}
+.sub{font-size:clamp(17px,1.8vw,22px);font-weight:500;margin:14px 0 0;max-width:40ch}
+.row{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px;align-items:center}
+.count{display:flex;gap:clamp(14px,2.4vw,34px);margin-left:auto;margin-right:84px}
+.count div{font-size:13.5px;text-align:center}
+.count b{display:block;font-stretch:62%;font-weight:900;font-size:clamp(34px,4.4vw,60px);line-height:.95;font-variant-numeric:tabular-nums}
+/* distances */
+.dists{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.dist{color:#fff;padding:clamp(22px,3vw,40px) clamp(18px,2.4vw,34px) clamp(24px,3vw,38px);display:flex;flex-direction:column;min-height:clamp(400px,44vw,560px);text-decoration:none;position:relative;transition:transform .2s cubic-bezier(.2,.7,.2,1)}
+.dist:hover{transform:translateY(-8px)}
+.dist .num{font-size:clamp(80px,10.5vw,170px)}
+.dist .num small{font-size:.3em;margin-left:.14em;letter-spacing:.01em}
+.dist dl{margin:auto 0 0;padding:18px 0 0}
+.dist dl div{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-top:2px solid rgba(255,255,255,.35);font-weight:500}
+.dist dd{margin:0;font-weight:800;white-space:nowrap}
+.dist p{margin:14px 0 0;font-size:16px;min-height:4.7em}
+.dist .go{margin-top:16px;display:inline-flex;align-self:flex-start;align-items:center;min-height:46px;padding:10px 22px;border-radius:999px;background:#fff;color:var(--encre);font-weight:800}
+.c1{background:var(--creme);color:var(--encre)}.c2{background:var(--sable);color:var(--encre)}
+.c1 .num,.c2 .num{color:var(--vin)}.c1 dl div,.c2 dl div{border-color:rgba(22,16,12,.22)}.c1 .go,.c2 .go{background:var(--vin);color:#fff}
+.c3{background:var(--vin)}.c4{background:var(--encre)}
+/* titres de section */
+.sec{padding:clamp(44px,6vw,96px) max(4vw,16px)}
+h2{font-size:clamp(44px,7.5vw,110px);color:var(--vin)}
+.lead{font-size:clamp(18px,1.7vw,21px);max-width:48ch;margin:16px 0 0}
+/* programme */
+.prog{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:var(--vind);color:var(--creme)}
+.prog .pic{background:url(village.jpg) center/cover no-repeat;min-height:420px}
+.prog .pan{padding:clamp(36px,5vw,80px) max(4vw,16px)}
+.prog h2{color:var(--creme)}
+.tl{list-style:none;margin:26px 0 0;padding:0}
+.tl li{display:grid;grid-template-columns:minmax(4.6em,auto) 1fr;gap:20px;align-items:baseline;padding:14px 0;border-top:2px solid rgba(255,248,242,.22)}
+.tl li:last-child{border-bottom:2px solid rgba(255,248,242,.22)}
+.tl time{font-stretch:62%;font-weight:900;font-size:clamp(34px,3.6vw,50px);line-height:1;white-space:nowrap;color:#fff;font-variant-numeric:tabular-nums}
+.tl span{font-size:18px}
+/* pratique */
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(24px,4vw,64px);margin-top:clamp(26px,3vw,44px)}
+.facts div{border-top:4px solid var(--vin);padding-top:16px}
+.facts b{display:block;font-stretch:62%;font-weight:900;text-transform:uppercase;font-size:clamp(38px,4.6vw,68px);line-height:.92;color:var(--vin);white-space:nowrap}
+.facts p{margin:10px 0 0;max-width:34ch}
+/* bénévoles */
+.ben{background:var(--sable);display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:center}
+.ben img{width:100%;border-radius:6px}
+.ben h2{color:var(--encre);font-size:clamp(40px,6vw,88px)}
+.ben .btn{background:var(--encre);color:#fff;margin-top:22px}
+.ben .btn:hover{background:var(--vin)}
+/* club */
+.club{background:var(--vin);color:#FFEFE3;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:center}
+.club h2{color:#fff;font-size:clamp(40px,6vw,88px)}
+.club img{width:100%;border-radius:6px}
+.club ul{list-style:none;margin:22px 0 0;padding:0}
+.club li{padding:12px 0;border-top:2px solid rgba(255,255,255,.28)}
+.club li b{color:#fff;font-weight:800}
+.club .btn{margin-top:22px}
+footer{background:var(--encre);color:var(--creme);padding:clamp(36px,5vw,64px) max(4vw,16px)}
+footer .in{display:flex;flex-wrap:wrap;gap:20px 56px;justify-content:space-between}
+footer h3{margin:0 0 8px;font-size:18px;font-weight:800}
+footer p{margin:0 0 5px}
+footer a{color:var(--safran)}
+.small{font-size:14px;opacity:.82;max-width:44ch}
+/* barre d'inscription */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:25;background:#fff;box-shadow:0 -1px 0 rgba(22,16,12,.14);padding:10px max(4vw,16px);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.bar span{font-weight:700}
+.bar small{display:block;font-weight:400;font-size:14px;opacity:.75}
+.bar .btn{background:var(--vin);color:#fff;min-height:50px}
+.bar .btn:hover{background:var(--encre)}
+
+/* assistant (démo) : même présentation que l'assistant EventLyx du Challenge du Montcalm */
+.cb{position:fixed;right:max(2vw,16px);bottom:86px;z-index:28;width:64px;height:64px;border:0;border-radius:50%;background:var(--vin);color:#fff;cursor:pointer;display:grid;place-items:center;box-shadow:0 8px 24px rgba(194,65,12,.45);transition:transform .15s}
+.cb:hover{transform:scale(1.06)}
+.cb svg{width:30px;height:30px;grid-area:1/1}
+.cb .ix{display:none}.cb.on .ic{display:none}.cb.on .ix{display:block}
+.tz{position:fixed;right:max(2vw,16px);bottom:162px;z-index:27;width:264px;background:#fff;color:var(--encre);border-radius:14px 14px 4px 14px;box-shadow:0 8px 26px rgba(0,0,0,.18);padding:12px 34px 12px 14px;font-size:14.5px;line-height:1.35;cursor:pointer;display:none}
+.tz.on{display:block}
+.tz b{display:block;font-weight:800}
+.tz span{opacity:.72;font-size:13.5px}
+.tz button{position:absolute;top:2px;right:2px;width:32px;height:32px;border:0;background:none;font-size:18px;line-height:1;cursor:pointer;color:inherit;opacity:.6;border-radius:50%}
+.tz button:hover{opacity:1}
+.cw{position:fixed;right:max(2vw,16px);bottom:162px;z-index:28;width:min(390px,calc(100vw - 32px));height:min(640px,calc(100vh - 215px));background:#FBF6F1;color:var(--encre);border-radius:22px;box-shadow:0 18px 50px rgba(22,16,12,.3);display:none;flex-direction:column;overflow:hidden}
+.cw.on{display:flex}
+.cw header{position:relative;flex:none;background:linear-gradient(135deg,#DD5A1C,var(--vin) 55%,#8F2F08);color:#fff;padding:16px 16px 30px;display:flex;align-items:center;gap:12px;clip-path:polygon(0 0,100% 0,100% 82%,95% 92%,90% 84%,84% 96%,78% 86%,71% 95%,64% 83%,57% 94%,50% 85%,43% 97%,36% 86%,29% 94%,22% 84%,15% 96%,8% 87%,0 95%)}
+.cw header img{width:46px;height:46px;border-radius:50%;border:2px solid #fff;flex:none}
+.cw header div{flex:1}
+.cw header small{display:block;font-size:11.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;opacity:.9}
+.cw header b{display:block;font-size:20px;font-weight:800;font-style:italic;line-height:1.1}
+.cw header em{font-style:normal;font-size:13px;display:flex;align-items:center;gap:6px;margin-top:3px}
+.cw header em::before{content:"";width:9px;height:9px;border-radius:50%;background:#3DDC84;box-shadow:0 0 0 2px rgba(255,255,255,.35)}
+.cw header button{appearance:none;flex:none;width:36px;height:36px;border:0;border-radius:10px;background:rgba(255,255,255,.2);color:#fff;cursor:pointer;display:grid;place-items:center}
+.cw header button:hover{background:rgba(255,255,255,.34)}
+.cw header button svg{width:18px;height:18px}
+.msgs{flex:1;overflow-y:auto;padding:4px 14px 12px;display:flex;flex-direction:column;gap:10px}
+.day{align-self:center;font-size:12.5px;opacity:.6;margin:4px 0 6px}
+.msg{max-width:82%;padding:11px 14px;border-radius:16px;font-size:15px;line-height:1.42}
+.msg.a{background:#fff;align-self:flex-start;border-bottom-left-radius:4px;box-shadow:0 1px 0 rgba(22,16,12,.08),0 0 0 1px rgba(22,16,12,.06);margin-left:34px;position:relative}
+.msg.a::before{position:absolute;left:-34px;bottom:0;width:26px;height:26px;border-radius:50%}
+.msg.a strong{color:var(--vin);font-weight:800}
+.msg.a p{margin:0}.msg.a p+p{margin-top:.8em}
+.msg.u{background:var(--vin);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.typing{display:flex;gap:5px;align-items:center;min-height:42px}
+.typing i{width:7px;height:7px;border-radius:50%;background:var(--vin);opacity:.35;animation:tp 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes tp{30%{opacity:1;transform:translateY(-3px)}}
+.chips{flex:none;display:flex;gap:8px;padding:4px 14px 10px;overflow-x:auto;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chips button{appearance:none;flex:none;border:1px solid rgba(194,65,12,.35);background:#fff;color:var(--vin);font:700 13.5px/1.2 var(--f);padding:9px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.chips button:hover{background:var(--vin);color:#fff}
+.cw form{flex:none;display:flex;align-items:center;gap:6px;margin:0 12px;padding:5px 5px 5px 16px;background:#fff;border:2px solid var(--vin);border-radius:999px}
+.cw input{flex:1;min-height:40px;border:0;outline:0;background:none;font:16px var(--f);color:var(--encre)}
+.cw form:focus-within{box-shadow:0 0 0 3px rgba(194,65,12,.25)}
+.cw form button{flex:none;width:40px;height:40px;border:0;border-radius:50%;background:var(--vin);color:#fff;cursor:pointer;display:grid;place-items:center}
+.cw form button svg{width:18px;height:18px}
+.cw .note{flex:none;margin:0;padding:8px 16px 12px;text-align:center;font-size:11.5px;line-height:1.4;opacity:.7}
+@media(max-width:760px){.cw{left:8px;right:8px;top:68px;bottom:82px;width:auto;height:auto}.cb.on{display:none}.tz{bottom:158px}}
+@media(prefers-reduced-motion:reduce){.typing i{animation:none}}
+@media(max-width:980px){.dists{grid-template-columns:repeat(2,minmax(0,1fr))}.dist{min-height:380px}.facts{grid-template-columns:minmax(0,1fr);gap:26px}}
+@media(max-width:760px){
+ .top ul{display:none}
+ .hero{min-height:78vh}
+ .count{margin-left:0;margin-right:0;width:100%;justify-content:flex-start;margin-top:8px}
+ .prog,.ben,.club{grid-template-columns:minmax(0,1fr)}
+ .prog .pic{min-height:240px}
+ .dists{grid-template-columns:minmax(0,1fr)}
+ .dist{min-height:0}
+ .dist .num{font-size:92px}
+ .dist dl{margin-top:10px}.dist p{min-height:0}
+ .dist:hover{transform:none}
+ .bar small{display:none}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+.logo.txt{background:var(--safran);color:var(--encre);padding:16px 18px 14px;text-decoration:none;font-stretch:62%;font-weight:900;text-transform:uppercase;font-size:clamp(22px,2.4vw,32px);line-height:.9;max-width:9.5em}
+.dist .nm{font-weight:800;font-size:18px;margin:0 0 8px}
+.dist .num.w{font-size:clamp(64px,7.6vw,128px)}
+.tl time small{font-size:.5em;font-weight:800;margin-left:.2em}
+.av{width:46px;height:46px;border-radius:50%;border:2px solid #fff;flex:none;display:grid;place-items:center;background:var(--safran);color:var(--encre);font-weight:900;font-size:15px}
+.msg.a::before{background:var(--safran);content:var(--ini);color:var(--encre);font:900 10px/26px var(--f);text-align:center}
+.cw .note a{color:inherit}
+.facts b{white-space:normal}
+img{height:auto}
+.date{font-size:clamp(52px,11.2vw,168px)}
+.prog .pic{background-position:42% 40%}</style></head><body>
+
+<div class="maq"><span>Maquette de refonte réalisée par EventLyx pour Chierry J'y Cours. Ce n'est pas le site officiel.</span><a href="https://chierryjycours.e-monsite.com/">Site officiel du club</a></div>
+
+<header class="hero" id="haut">
+ <div class="top">
+  <a class="logo txt" href="#haut">Chierry J'y Cours</a>
+  <ul><li><a href="#distances">Les formats</a></li><li><a href="#programme">Tamp'Trolls</a></li><li><a href="#infernal">Infernal du Bois</a></li><li><a href="#club">Le club</a></li><li><a href="#contact">Contact</a></li></ul>
+ </div>
+ <div class="txt"><div class="in">
+  <p class="d date" aria-hidden="true">23 janv. 2027</p>
+  <h1 class="d">Tamp'Trolls</h1>
+  <p class="sub">Samedi 23 janvier 2027, à Nesles-la-Montagne. Un trail de nuit de 13,8 km, à la frontale. Départ à 18 h.</p>
+  <div class="row">
+   <a class="btn" href="https://chierryjycours.e-monsite.com/pages/la-nuit-des-trolls.html">Je m'inscris</a>
+   <a class="btn line" href="#distances">Voir les formats</a>
+   <div class="count" id="count" aria-label="Temps restant avant le départ"><div><b id="cj">–</b>jours</div><div><b id="ch">–</b>heures</div><div><b id="cm">–</b>minutes</div></div>
+  </div>
+ </div></div>
+</header>
+
+<section class="dists" id="distances" aria-label="Les formats">
+ <a class="dist c1" href="https://chierryjycours.e-monsite.com/pages/la-nuit-des-trolls.html"><p class="nm">Tamp'Trolls</p><span class="d num">13,8<small>km</small></span>
+  <dl><div><dt>Dénivelé</dt><dd>environ 470 m D+</dd></div><div><dt>Départ</dt><dd>sam. 23 janv., 18 h</dd></div></dl>
+  <p>Le trail nocturne du club, en autonomie complète. 200 dossards, pas un de plus.</p><span class="go">Prendre ce dossard</span></a>
+ <a class="dist c2" href="https://chierryjycours.e-monsite.com/pages/off-l-infernal-du-bois.html"><p class="nm">L'Infernal</p><span class="d num">6<small>heures</small></span>
+  <dl><div><dt>La boucle</dt><dd>6 km, 314 m D+</dd></div><div><dt>Départ</dt><dd>dim. 4 avril, 8 h 00</dd></div></dl>
+  <p>Six heures de boucles dans le bois Pierre, à Chierry. Autant de tours que les jambes le permettent.</p><span class="go">Voir l'Infernal</span></a>
+ <a class="dist c3" href="https://chierryjycours.e-monsite.com/pages/off-l-infernal-du-bois.html"><p class="nm">La Pénible</p><span class="d num">3<small>heures</small></span>
+  <dl><div><dt>La boucle</dt><dd>6 km, 314 m D+</dd></div><div><dt>Départ</dt><dd>dim. 4 avril, 9 h 30</dd></div></dl>
+  <p>Le même bois et la même boucle, pendant trois heures.</p><span class="go">Voir la Pénible</span></a>
+ <a class="dist c4" href="https://chierryjycours.e-monsite.com/pages/off-l-infernal-du-bois.html"><p class="nm">La Cerisiènne</p><span class="d num">12<small>km</small></span>
+  <dl><div><dt>Le format</dt><dd>2 tours de boucle</dd></div><div><dt>Départ</dt><dd>dim. 4 avril, 10 h 30</dd></div></dl>
+  <p>Deux tours et c'est plié : le format trail de la journée.</p><span class="go">Voir la Cerisiènne</span></a>
+</section>
+
+<section class="prog" id="programme">
+ <div class="pic" role="img" aria-label="Nesles-la-Montagne, entre les vignes et la vallée de la Marne"></div>
+ <div class="pan">
+  <h2 class="d">Avant de t'inscrire</h2>
+  <ol class="tl">
+   <li><time>18 h</time><span>Départ de Nesles-la-Montagne, frontale allumée</span></li>
+   <li><time>200</time><span>dossards, inscriptions en ligne</span></li>
+   <li><time>0</time><span>ravitaillement sur le parcours : chacun part avec ce qu'il lui faut</span></li>
+   <li><time>13,8<small>km</small></time><span>et environ 470 m de dénivelé, que la météo peut faire bouger un peu</span></li>
+  </ol>
+ </div>
+</section>
+
+<section class="sec" id="infernal"><div class="in">
+ <h2 class="d">L'Infernal du Bois</h2>
+ <p class="lead">Dimanche 4 avril 2027, à Chierry. Une boucle de 6 km et 314 m de dénivelé dans le bois Pierre, à refaire encore et encore.</p>
+ <div class="facts">
+  <div><b>3 formats</b><p>L'Infernal pendant 6 heures, la Pénible pendant 3 heures, la Cerisiènne sur 2 tours.</p></div>
+  <div><b>150 dossards</b><p>Pour les trois formats réunis.</p></div>
+  <div><b>PPS</b><p>À jour avant le 25 mars 2027, sinon pas de dossard.</p></div>
+ </div>
+</div></section>
+
+<section class="sec club" id="club">
+ <div>
+  <h2 class="d">Chierry J'y Cours</h2>
+  <ul>
+   <li><b>« Ne viens pas pour un chrono ou une place. »</b> La seule consigne du club.</li>
+   <li><b>255 dossards en 2026</b>, tous partis trois semaines avant le jour J.</li>
+   <li><b>255 € remis aux urgences</b> de l'hôpital de Château-Thierry après l'édition 2026.</li>
+   <li><b>Des BénéTrolls partout</b> : à l'accueil, au chrono et aux traversées de route.</li>
+  </ul>
+  <a class="btn" href="https://chierryjycours.e-monsite.com/">Découvrir le club</a>
+ </div>
+ <img src="trolls.jpg" alt="Des coureurs déguisés au départ d&#x27;une édition des Trolls, de nuit" width="1050" height="680">
+</section>
+
+<footer id="contact"><div class="in">
+ <div><h3>Nous joindre</h3><p>Par le formulaire du <a href="https://chierryjycours.e-monsite.com/">site du club</a>.</p><p>Sur Facebook : « Chierry j'y cours » et « Trolls ».</p></div>
+ <div><h3>Où ça se passe</h3><p>Tamp'Trolls : Nesles-la-Montagne (02400)</p><p>Infernal du Bois : Chierry (02400)</p></div>
+ <div><h3>À propos de cette page</h3><p class="small">Maquette proposée par EventLyx. Informations relevées le 26 novembre 2026 sur le site du club. Photo de Nesles-la-Montagne : Pascal3012, Wikimedia Commons, licence CC BY-SA 4.0, assombrie. Photo des coureurs : Chierry J'y Cours.</p></div>
+</div></footer>
+
+<div class="bar"><span>Inscriptions ouvertes<small>Tamp'Trolls, samedi 23 janvier 2027</small></span><a class="btn" href="https://chierryjycours.e-monsite.com/pages/la-nuit-des-trolls.html">Je m'inscris</a></div>
+
+<div class="tz" id="tz"><b>Une question sur les Trolls ?</b><span>Réponse en quelques secondes</span><button type="button" id="tzX" aria-label="Masquer ce message">×</button></div>
+<button class="cb" id="chatB" type="button" aria-expanded="false" aria-controls="chat" aria-label="Ouvrir l'assistant de la course">
+ <svg class="ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.8 2 11.5c0 2.6 1.4 4.9 3.6 6.5-.2 1.2-.8 2.4-1.7 3.4 2 0 3.8-.7 5.2-1.8.9.2 1.9.4 2.9.4 5.5 0 10-3.8 10-8.5S17.5 3 12 3zM7.5 13a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm4.5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm4.5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"/></svg>
+ <svg class="ix" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+</button>
+<section class="cw" id="chat" role="dialog" aria-label="Assistant de la course">
+ <header>
+  <div class="av" aria-hidden="true">CJC</div>
+  <div><small>Chierry J'y Cours</small><b>Tamp'Trolls</b><em>Assistant de démonstration</em></div>
+  <button type="button" id="chatR" aria-label="Recommencer la conversation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 108-8 8 8 0 00-6 2.7"/><path d="M4 4v4h4"/></svg></button>
+  <button type="button" id="chatX" aria-label="Réduire l'assistant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+ </header>
+ <div class="msgs" id="msgs" aria-live="polite"></div>
+ <div class="chips" id="chips"></div>
+ <form id="chatF"><input id="chatI" type="text" autocomplete="off" placeholder="Pose ta question…" aria-label="Votre question"><button type="submit" aria-label="Envoyer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20.5l19-8.5L3 3.5v6.5l12 2-12 2z"/></svg></button></form>
+ <p class="note">Démonstration EventLyx : réponses tirées des informations de cette page.</p>
+</section>
+<script>
+{
+ const T=Date.parse('2027-01-23T18:00:00+01:00');
+ const tick=()=>{let s=Math.max(0,Math.floor((T-Date.now())/1000));
+  document.getElementById('cj').textContent=Math.floor(s/86400);
+  document.getElementById('ch').textContent=Math.floor(s%86400/3600);
+  document.getElementById('cm').textContent=Math.floor(s%3600/60)};
+ tick();setInterval(tick,30000);
+}
+</script>
+
+<script>
+{
+ const R=[[["penible"], "La Pénible, c'est 3 heures de boucles dans le bois Pierre (6 km et 314 m de dénivelé par tour). Départ le dimanche 4 avril 2027 à 9 h 30, à Chierry."], [["cerisi"], "La Cerisiènne fait 2 tours de la boucle, soit 12 km. Départ le dimanche 4 avril 2027 à 10 h 30, à Chierry."], [["pps", "certificat", "licence"], "Pour l'Infernal du Bois, ton PPS doit être à jour avant le 25 mars 2027, sinon pas de dossard."], [["infernal", "bois pierre", "boucle", "avril"], "L'Infernal du Bois a lieu le dimanche 4 avril 2027 à Chierry. Une boucle de 6 km et 314 m de dénivelé, et trois formats : l'Infernal pendant 6 heures (départ 8 h 00), la Pénible pendant 3 heures (9 h 30) et la Cerisiènne sur 2 tours (10 h 30). 150 dossards en tout."], [["ravito", "ravitaillement", "manger", "boire", "eau", "autonomie"], "Tamp'Trolls se court en autonomie complète : pas de ravitaillement sur le parcours, tu pars avec ce qu'il te faut."], [["combien de dossard", "places", "limite", "complet", "dossard"], "Tamp'Trolls est limité à 200 dossards. En 2026, tous les dossards étaient partis trois semaines avant le jour J : n'attends pas."], [["inscri"], "Les inscriptions de Tamp'Trolls sont ouvertes depuis le 15 septembre 2026. Le bouton « Je m'inscris », en bas de la page, t'y emmène."], [["distance", "denivele", "parcours", "km", "d+"], "Tamp'Trolls fait 13,8 km pour environ 470 m de dénivelé positif. Selon la météo du jour, le parcours peut être légèrement modifié."], [["heure", "horaire", "depart", "quand part"], "Le départ de Tamp'Trolls est donné à 18 h 00, le samedi 23 janvier 2027, à Nesles-la-Montagne."], [["date", "quel jour", "quand"], "Tamp'Trolls a lieu le samedi 23 janvier 2027 à Nesles-la-Montagne. L'Infernal du Bois, le dimanche 4 avril 2027 à Chierry."], [["ou se", "ou est", "ou a lieu", "lieu", "adresse", "nesles"], "Tamp'Trolls part de Nesles-la-Montagne (02400). L'Infernal du Bois se court à Chierry, dans le bois Pierre."], [["frontale", "materiel", "lampe", "nuit"], "Tamp'Trolls est un trail nocturne : la frontale est de sortie. Pour la liste complète du matériel, regarde le règlement 2027 sur le site du club."], [["reglement"], "Le règlement 2027 est en téléchargement sur le site du club."], [["contact", "mail", "joindre", "facebook"], "Tu peux écrire au club par le formulaire de son site, ou passer par les pages Facebook « Chierry j'y cours » et « Trolls »."], [["bonjour", "salut", "hello", "coucou"], "Salut ! Pose-moi ta question sur Tamp'Trolls ou l'Infernal du Bois."]];
+ const Q=[["🕕 Départ", "À quelle heure est le départ ?"], ["🔦 Parcours", "Quelle distance et quel dénivelé ?"], ["🥤 Ravitos", "Y a-t-il des ravitaillements ?"], ["🌲 Infernal du Bois", "C'est quoi l'Infernal du Bois ?"], ["🎟️ Places", "Combien de dossards ?"]];
+ const $=id=>document.getElementById(id),box=$('chat'),msgs=$('msgs'),btn=$('chatB'),tz=$('tz');
+ const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const norm=t=>t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+ const el=(c,t)=>{const d=document.createElement('div');d.className=c;if(t)d.textContent=t;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;return d};
+ const add=(t,c)=>el('msg '+c,t.replace(/(\d) (h|km|m|€)/g,'$1\u00a0$2').replace(/h (\d\d)/g,'h\u00a0$1'));
+ const reply=q=>{const n=norm(q);const r=R.find(x=>x[0].some(k=>n.includes(k)));
+  return r?r[1]:"Je n'ai pas cette information. Sur le site en ligne, je transmets la question aux bénévoles du club. En attendant, passe par le formulaire du site du club."};
+ const ask=q=>{q=q.trim();if(!q)return;add(q,'u');
+  if(still){add(reply(q),'a');return}
+  const t=el('msg a typing');t.innerHTML='<i></i><i></i><i></i>';setTimeout(()=>{t.remove();add(reply(q),'a')},700)};
+ const hello=()=>{msgs.innerHTML='';el('day',"Aujourd'hui");const m=el('msg a');
+  m.innerHTML="<p>Salut ! 👋 Je suis l'assistant de <strong>Chierry J'y Cours</strong>.</p><p>Tamp'Trolls, Infernal du Bois, dossards, horaires… pose-moi ta question !</p>";
+  $('chips').innerHTML='';Q.forEach(q=>{const b=document.createElement('button');b.type='button';b.textContent=q[0];b.addEventListener('click',()=>ask(q[1]));$('chips').appendChild(b)})};
+ let started=false;
+ const open=on=>{box.classList.toggle('on',on);btn.classList.toggle('on',on);btn.setAttribute('aria-expanded',on);
+  btn.setAttribute('aria-label',on?"Fermer l'assistant de la course":"Ouvrir l'assistant de la course");tz.classList.remove('on');
+  if(on&&!started){started=true;hello()}
+  if(on)$('chatI').focus()};
+ btn.addEventListener('click',()=>open(!box.classList.contains('on')));
+ $('chatX').addEventListener('click',()=>{open(false);btn.focus()});
+ $('chatR').addEventListener('click',()=>{hello();$('chatI').focus()});
+ tz.addEventListener('click',()=>open(true));
+ $('tzX').addEventListener('click',e=>{e.stopPropagation();tz.classList.remove('on')});
+ setTimeout(()=>{if(!started)tz.classList.add('on')},2500);
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&box.classList.contains('on')){open(false);btn.focus()}});
+ $('chatF').addEventListener('submit',e=>{e.preventDefault();const i=$('chatI');ask(i.value);i.value=''});
+}
+</script>
+</body></html>
