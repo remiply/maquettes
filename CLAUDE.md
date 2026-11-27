@@ -10,14 +10,18 @@ Chaque dossier = un club. ⚠️ Ce dépôt est PUBLIC (et servi en ligne) : auc
 3. **Hors exclusions** : voir le skill « maquette-site-web ».
 
 ## Fabriquer la maquette
+**Chaque club a sa propre mise en page.** Deux maquettes ne doivent pas se ressembler : la page reprend l'identité de l'organisation (couleurs, typo, ambiance) et la structure suit l'événement (ex. COHM : calendrier de saison en tête ; Ceven'Trail : courses comparées ; Corrida : tableau des départs du week-end). Le gabarit `gen.py` est une base rapide, pas un moule.
+
 1. Crée le dossier `<slug>/` (ex. `rocamadour`, `chierry`).
-2. **Couleurs** : celles du club (logo, maillots), palette sobre, 6 variables (`vin`, `vind`, `encre`, `creme`, `safran`, `sable`).
-3. **Photos** : uniquement des images de qualité. Photos du club si elles sont nettes, sinon photos HD libres de droits du lieu (Wikimedia Commons, crédits dans le pied de page). Cadrage soigné : le sujet visible sur ordinateur ET sur mobile (`heropos`). Fichiers : `hero.jpg` + 2-3 photos de section, compressées.
-4. **Contenu** : uniquement des infos vraies, tirées du site du club (dates, distances, horaires, lien d'inscription). Rien d'inventé.
-5. **Chatbot** : toujours le chatbot façon Challenge du Montcalm (bulle, teaser, fenêtre avec en-tête, suggestions, points de saisie). Réponses `R` (mots-clés → réponse), suggestions `Q`, `fallback` et `hello` écrits à partir des vraies infos du club.
-6. Ajoute le dict du club dans `_gabarit/gen.py` (modèles : `chierry`, `randon`), puis :
+2. **Couleurs** : celles du club (logo, maillots), palette sobre.
+3. **Photos** : uniquement des images de qualité. Photos du club si elles sont nettes, sinon photos HD libres de droits du lieu (Wikimedia Commons, crédits dans le pied de page). Jamais d'image générée par IA, jamais d'enfant reconnaissable (recadrer ou écarter). Cadrage soigné : le sujet visible sur ordinateur ET sur mobile. Fichiers : `hero.jpg` + 2-4 photos de section, compressées, vraies JPEG (certains CDN servent du WebP sous une extension .jpg : convertir avec `sips -s format jpeg`).
+4. **Contenu** : uniquement des infos vraies, tirées du site du club (dates, distances, horaires, tarifs, lien d'inscription, partenaires, contacts). Rien d'inventé. Si deux sources se contredisent, choisir la plus récente ou ne pas donner le chiffre.
+5. **Chatbot** : toujours le chatbot façon Challenge du Montcalm, fourni par `_gabarit/chatbot.py` (`block(cfg)` → CSS, HTML, JS, couleurs paramétrables). Réponses `R` (mots-clés sans accents → réponse, la première règle qui correspond gagne : mettre les tarifs avant les fiches de course), suggestions `Q`, `fallback` et `hello` écrits à partir des vraies infos du club.
+6. Deux façons de générer :
+   - mise en page propre (recommandé) : un script `_gabarit/sites/<slug>.py` (modèles : `corrida_abbesses.py`, `cohm.py`, `ceventrail.py`) ;
+   - gabarit commun : ajoute le dict du club dans `_gabarit/gen.py` (modèles : `chierry`, `randon`).
    ```
-   python3 _gabarit/gen.py <slug>
+   python3 _gabarit/sites/<slug>.py      # ou : python3 _gabarit/gen.py <slug>
    python3 _gabarit/shoot.py <slug>
    ```
 7. **Contrôle visuel obligatoire** : ouvre les captures de `_gabarit/shots/` (ordinateur + mobile). Vérifie : pas de débordement horizontal (`scrollWidth` = largeur), pas d'erreur JS, photos bien cadrées, compte à rebours non masqué par la bulle du chatbot, chatbot qui répond. Corrige et recommence jusqu'à ce que ce soit propre. Le site ne doit jamais avoir l'air « fait par une IA ».
