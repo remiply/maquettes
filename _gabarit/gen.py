@@ -117,7 +117,7 @@ def build(c):
 <footer id="contact"><div class="in">
  <div><h3>Nous joindre</h3>{c['contact']}</div>
  <div><h3>{c['where_h']}</h3>{c['where']}</div>
- <div><h3>À propos de cette page</h3><p class="small">Maquette proposée par EventLyx. Informations relevées le 26 novembre 2026 sur le site du club. {c['credits']}</p></div>
+ <div><h3>À propos de cette page</h3><p class="small">Maquette proposée par EventLyx. Informations relevées le {c.get('releve', '26 novembre 2026')} sur le site du club. {c['credits']}</p></div>
 </div></footer>
 
 <div class="bar"><span>{c['bar_t']}<small>{c['bar_s']}</small></span><a class="btn" href="{c['signup']}">Je m'inscris</a></div>

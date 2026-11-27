@@ -5,7 +5,10 @@ from playwright.async_api import async_playwright
 async def main(name):
     os.makedirs(os.path.join(ROOT, '_gabarit', 'shots'), exist_ok=True)
     async with async_playwright() as p:
-        b = await p.chromium.launch(args=['--no-sandbox'])
+        try:
+            b = await p.chromium.launch(args=['--no-sandbox'])
+        except Exception:  # Chromium de Playwright absent : Chrome installé sur la machine
+            b = await p.chromium.launch(channel='chrome', args=['--no-sandbox'])
         for w,h,tag in ((1280,800,'d'),(390,800,'m')):
             pg = await b.new_page(viewport={'width':w,'height':h})
             errs=[]
