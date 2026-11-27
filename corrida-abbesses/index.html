@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Corrida des Abbesses et Trail 14/18 : maquette de site par EventLyx</title>
+<link rel="preload" as="image" href="hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;1,700;1,800&family=Barlow:wght@400;600;700;800&display=swap">
+<style>
+:root{color-scheme:light;--mag:#AB438E;--magd:#7C2B65;--magc:#E7B7D8;--nuit:#231F20;--nuit2:#2F292B;--rose:#FAF3F8;--ligne:rgba(35,31,32,.14);--f:'Barlow',system-ui,sans-serif;--fc:'Barlow Condensed','Arial Narrow',sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--rose);color:var(--nuit);font:17px/1.55 var(--f)}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.w{max-width:1200px;margin:0 auto;padding:0 32px}
+.k{font:800 italic 1em/0.92 var(--fc);text-transform:uppercase;letter-spacing:-.005em}
+.maq{background:#000;color:#fff;font-size:13px;padding:7px 16px;display:flex;gap:14px;justify-content:space-between;flex-wrap:wrap}
+.maq a{color:var(--magc)}
+/* en-tête */
+.nav{position:absolute;top:0;left:0;right:0;z-index:5;padding:22px 0}
+.nav .w{display:flex;align-items:center;gap:28px}
+.brand{color:#fff;text-decoration:none;display:flex;flex-direction:column;line-height:.9}
+.brand b{font:800 italic 30px/0.9 var(--fc);text-transform:uppercase}
+.brand span{font:600 13px/1.3 var(--f);letter-spacing:.14em;text-transform:uppercase;opacity:.8;margin-top:6px}
+.nav ul{list-style:none;margin:0 0 0 auto;padding:0;display:flex;gap:24px}
+.nav ul a{color:#fff;text-decoration:none;font-weight:600;font-size:15px}
+.nav ul a:hover{color:var(--magc)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;border-radius:2px;background:var(--mag);color:#fff;text-decoration:none;font:800 italic 19px/1 var(--fc);text-transform:uppercase;letter-spacing:.02em;transform:skewX(-8deg);transition:background .15s}
+.btn>span{transform:skewX(8deg)}
+.btn:hover{background:var(--magd)}
+.btn.blanc{background:#fff;color:var(--nuit)}
+.btn.blanc:hover{background:var(--magc)}
+.btn.ligne{background:transparent;box-shadow:inset 0 0 0 2px currentColor}
+/* hero */
+.hero{position:relative;min-height:min(860px,100vh);color:#fff;background:#120E10 url(hero.jpg) center 38%/cover no-repeat;display:flex;align-items:flex-end;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(18,14,16,.72) 0,rgba(18,14,16,.25) 28%,rgba(35,15,30,.55) 55%,rgba(18,14,16,.96) 100%)}
+.hero>.w{width:100%;padding-top:150px;padding-bottom:56px}
+.sur{font:700 15px/1.3 var(--f);letter-spacing:.16em;text-transform:uppercase;color:var(--magc);margin:0 0 14px}
+.hero h1{margin:0;font-size:clamp(58px,9.4vw,148px)}
+.hero h1 em{font-style:inherit;color:var(--mag);-webkit-text-stroke:0}
+.hero .lead{max-width:640px;font-size:clamp(17px,1.5vw,20px);margin:18px 0 0;opacity:.92}
+.duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:38px}
+.billet{position:relative;background:rgba(255,255,255,.08);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.22);padding:22px 24px 24px;display:flex;flex-direction:column;gap:8px}
+.billet.c{background:rgba(171,67,142,.86);border-color:rgba(255,255,255,.3)}
+.billet .jour{font:800 italic 22px/1 var(--fc);text-transform:uppercase;letter-spacing:.03em;opacity:.85}
+.billet h2{margin:0;font-size:clamp(32px,3.4vw,46px)}
+.billet p{margin:0;font-size:16px;opacity:.94}
+.billet .bas{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:10px}
+.billet .h{font:800 italic 40px/1 var(--fc)}
+.count{display:flex;gap:22px;align-items:flex-end;margin-top:26px;font-size:13px;opacity:.9}
+.count b{display:block;font:800 italic 38px/1 var(--fc)}
+.count span.t{font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:12px;margin-right:6px;align-self:center;max-width:9em;line-height:1.3}
+/* bandeau chiffres */
+.chiffres{background:var(--mag);color:#fff}
+.chiffres .w{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0}
+.chiffres .w>div{padding:26px 18px 24px;border-left:1px solid rgba(255,255,255,.25)}
+.chiffres .w>div:first-child{border-left:0;padding-left:0}
+.chiffres b{display:block;font:800 italic clamp(40px,4.4vw,62px)/.95 var(--fc)}
+.chiffres span{font-size:15px;opacity:.92}
+/* sections */
+.sec{padding:96px 0}
+.sec h2.k{font-size:clamp(44px,5.6vw,84px);margin:0 0 18px}
+.sec .intro{max-width:720px;font-size:19px;margin:0 0 40px}
+/* tableau des départs */
+.tab{background:var(--nuit);color:#fff}
+.tab h2 em{font-style:inherit;color:var(--mag)}
+.board{border-top:2px solid var(--mag)}
+.board .j{font:800 italic 24px/1 var(--fc);text-transform:uppercase;letter-spacing:.04em;color:var(--magc);padding:28px 0 10px}
+.row{display:grid;grid-template-columns:120px minmax(0,1.6fr) minmax(0,1fr) minmax(0,1.1fr) auto;gap:20px;align-items:center;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.row .h{font:800 italic 40px/1 var(--fc);color:#fff}
+.row .n{font-weight:700;font-size:18px}
+.row .n small{display:block;font-weight:400;font-size:14.5px;opacity:.7}
+.row .d{font:700 italic 24px/1.1 var(--fc);text-transform:uppercase}
+.row .p{font-size:14.5px;opacity:.8}
+.row .tag{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 9px;border:1px solid rgba(255,255,255,.35);border-radius:2px;white-space:nowrap;justify-self:end}
+.row.as .h,.row.as .d{color:var(--magc)}
+.row.fete{background:linear-gradient(90deg,rgba(171,67,142,.28),transparent 70%)}
+.board-note{font-size:14.5px;opacity:.72;margin:22px 0 0}
+/* blocs course */
+.course{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);min-height:640px}
+.course .ph{background:#000 center/cover no-repeat;min-height:420px}
+.course .tx{padding:80px clamp(28px,5vw,80px);display:flex;flex-direction:column;justify-content:center}
+.course.t .tx{background:#fff}
+.course.c{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr)}
+.course.c .tx{background:var(--nuit);color:#fff;order:-1}
+.course h2.k{font-size:clamp(44px,5vw,76px);margin:6px 0 16px}
+.course .lab{font:700 14px/1.3 var(--f);letter-spacing:.14em;text-transform:uppercase;color:var(--mag)}
+.course.c .lab{color:var(--magc)}
+.course p{margin:0 0 14px;max-width:560px}
+.fiche{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin:18px 0 26px;border-top:1px solid var(--ligne);border-bottom:1px solid var(--ligne)}
+.course.c .fiche{border-color:rgba(255,255,255,.18)}
+.fiche div{padding:16px 14px 14px 0}
+.fiche b{display:block;font:800 italic 34px/1 var(--fc);color:var(--mag)}
+.course.c .fiche b{color:var(--magc)}
+.fiche span{font-size:14px;opacity:.8}
+.puces{list-style:none;padding:0;margin:0 0 28px;display:grid;gap:8px}
+.puces li{padding-left:22px;position:relative;font-size:16px}
+.puces li::before{content:"";position:absolute;left:0;top:.55em;width:10px;height:10px;background:var(--mag);transform:skewX(-12deg)}
+.prix{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 26px}
+.prix span{padding:8px 12px;border:1px solid var(--ligne);font-size:14.5px;background:var(--rose)}
+.prix span b{font-weight:800}
+.course.c .prix span{background:transparent;border-color:rgba(255,255,255,.25)}
+.prix span.now{background:var(--mag);border-color:var(--mag);color:#fff}
+.liens{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.liens a.s{font-weight:700;font-size:15px}
+.duoimg{display:grid;grid-template-rows:minmax(0,1.4fr) minmax(0,1fr)}
+.duoimg div{background:#000 center/cover no-repeat}
+/* festi run */
+.festi{background:var(--mag);color:#fff;position:relative;overflow:hidden}
+.festi::after{content:"FESTI RUN";position:absolute;right:-20px;bottom:-40px;font:800 italic 220px/1 var(--fc);color:rgba(255,255,255,.08);white-space:nowrap;pointer-events:none}
+.festi .w{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:56px;align-items:center;position:relative;z-index:1}
+.festi h2.k{font-size:clamp(48px,6vw,92px);margin:0 0 14px}
+.festi .intro{margin:0;font-size:19px}
+.festi dl{margin:0;display:grid;gap:0;background:rgba(0,0,0,.16)}
+.festi dl div{display:flex;justify-content:space-between;gap:20px;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.16)}
+.festi dt{font-weight:600}
+.festi dd{margin:0;font:800 italic 26px/1 var(--fc);white-space:nowrap}
+/* jeunes */
+.jeunes{background:#fff}
+.cartes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.carte{border:1px solid var(--ligne);padding:26px 24px;background:var(--rose)}
+.carte .h{font:800 italic 44px/1 var(--fc);color:var(--mag)}
+.carte h3{margin:8px 0 4px;font-size:19px}
+.carte p{margin:0;font-size:15.5px;opacity:.85}
+.jeunes .plus{margin:28px 0 0;font-size:16px;max-width:860px}
+/* pratique */
+.prat{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px 48px}
+.prat h3{font:800 italic 30px/1 var(--fc);text-transform:uppercase;margin:0 0 12px;padding-top:14px;border-top:3px solid var(--mag)}
+.prat p{margin:0 0 8px;font-size:16px}
+/* histoire */
+.hist{background:var(--nuit2);color:#fff}
+.hist .w{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:start}
+.hist .intro{opacity:.9}
+.frise{list-style:none;margin:0;padding:0;border-left:2px solid var(--mag)}
+.frise li{position:relative;padding:0 0 26px 30px}
+.frise li::before{content:"";position:absolute;left:-7px;top:10px;width:12px;height:12px;background:var(--mag);transform:skewX(-12deg)}
+.frise b{display:block;font:800 italic 38px/1 var(--fc);color:var(--magc)}
+.frise span{font-size:16px;opacity:.9}
+/* partenaires */
+.parts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--ligne);border:1px solid var(--ligne)}
+.parts div{background:#fff;min-height:96px;display:grid;place-items:center;text-align:center;padding:14px;font-weight:700;font-size:15.5px;line-height:1.25}
+.parts div small{display:block;font-weight:600;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mag);margin-bottom:5px}
+/* bénévoles */
+.benev{background:#fff;border-top:1px solid var(--ligne)}
+.benev .w{display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap;padding-top:56px;padding-bottom:56px}
+.benev h2{margin:0;font-size:clamp(34px,3.6vw,52px)}
+.benev p{margin:6px 0 0;max-width:620px}
+/* pied */
+footer{background:#000;color:#fff;padding:64px 0 120px;font-size:15.5px}
+footer .w{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px}
+footer h3{font:800 italic 24px/1 var(--fc);text-transform:uppercase;margin:0 0 14px;color:var(--magc)}
+footer p{margin:0 0 8px}
+footer a{color:#fff}
+footer .small{font-size:13px;opacity:.72}
+/* barre mobile */
+.mbar{display:none}
+@media(max-width:1020px){
+ .row{grid-template-columns:92px minmax(0,1fr) auto;row-gap:4px}
+ .row .d{grid-column:2}.row .p{grid-column:2}.row .tag{grid-row:1;grid-column:3}
+ .course,.course.c{grid-template-columns:minmax(0,1fr)}
+ .course.c .tx{order:0}
+ .course .ph{min-height:340px}
+ .duoimg{grid-template-rows:none;grid-template-columns:1fr 1fr;min-height:300px}
+ .festi .w,.hist .w{grid-template-columns:minmax(0,1fr);gap:36px}
+ .prat{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .parts{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:760px){
+ body{font-size:16px}
+ .w{padding:0 18px}
+ .nav{padding:16px 0}.nav ul{display:none}
+ .brand b{font-size:25px}
+ .hero{min-height:0;background-position:42% center}
+ .hero>.w{padding-top:112px;padding-bottom:36px}
+ .duo{grid-template-columns:minmax(0,1fr);gap:12px;margin-top:28px}
+ .billet{padding:18px 18px 20px}
+ .billet .h{font-size:32px}
+ .count{gap:16px}.count b{font-size:32px}
+ .chiffres .w{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .chiffres .w>div{padding:20px 12px 18px;border-left:0;border-top:1px solid rgba(255,255,255,.22)}
+ .chiffres .w>div:nth-child(-n+2){border-top:0}
+ .chiffres .w>div:nth-child(odd){padding-left:0}
+ .sec{padding:64px 0}
+ .row{grid-template-columns:64px minmax(0,1fr);column-gap:14px}
+ .row .h{font-size:30px}
+ .row .tag{grid-row:auto;grid-column:2;justify-self:start}
+ .course .tx{padding:52px 18px}
+ .fiche b{font-size:28px}
+ .festi::after{font-size:120px;bottom:-20px}
+ .cartes,.prat{grid-template-columns:minmax(0,1fr)}
+ .parts{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .parts div{min-height:80px;font-size:14.5px}
+ footer .w{grid-template-columns:minmax(0,1fr)}
+ footer{padding-bottom:150px}
+ .mbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:20;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(35,31,32,.96);backdrop-filter:blur(8px)}
+ .mbar .btn{min-height:46px;font-size:17px;padding:0 10px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* assistant (démo) : même présentation que l'assistant EventLyx du Challenge du Montcalm */
+.cb{position:fixed;right:max(2vw,16px);bottom:24px;z-index:28;width:64px;height:64px;border:0;border-radius:50%;background:#AB438E;color:#fff;cursor:pointer;display:grid;place-items:center;box-shadow:0 8px 24px rgba(171,67,142,.45);transition:transform .15s}
+.cb:hover{transform:scale(1.06)}
+.cb svg{width:30px;height:30px;grid-area:1/1}
+.cb .ix{display:none}.cb.on .ic{display:none}.cb.on .ix{display:block}
+.tz{position:fixed;right:max(2vw,16px);bottom:100px;z-index:27;width:264px;background:#fff;color:#231F20;border-radius:14px 14px 4px 14px;box-shadow:0 8px 26px rgba(0,0,0,.18);padding:12px 34px 12px 14px;font:14.5px/1.35 'Barlow',system-ui,sans-serif;cursor:pointer;display:none}
+.tz.on{display:block}
+.tz b{display:block;font-weight:800}
+.tz span{opacity:.72;font-size:13.5px}
+.tz button{position:absolute;top:2px;right:2px;width:32px;height:32px;border:0;background:none;font-size:18px;line-height:1;cursor:pointer;color:inherit;opacity:.6;border-radius:50%}
+.tz button:hover{opacity:1}
+.cw{position:fixed;right:max(2vw,16px);bottom:100px;z-index:28;width:min(390px,calc(100vw - 32px));height:min(640px,calc(100vh - 153px));background:#FAF5F8;color:#231F20;border-radius:22px;box-shadow:0 18px 50px rgba(0,0,0,.3);display:none;flex-direction:column;overflow:hidden;font-family:'Barlow',system-ui,sans-serif}
+.cw.on{display:flex}
+.cw header{position:relative;flex:none;background:linear-gradient(135deg,#C45AA6,#AB438E 55%,#6E2259);color:#fff;padding:16px 16px 30px;display:flex;align-items:center;gap:12px;clip-path:polygon(0 0,100% 0,100% 82%,95% 92%,90% 84%,84% 96%,78% 86%,71% 95%,64% 83%,57% 94%,50% 85%,43% 97%,36% 86%,29% 94%,22% 84%,15% 96%,8% 87%,0 95%)}
+.cw header div{flex:1}
+.cw header small{display:block;font-size:11.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;opacity:.9}
+.cw header b{display:block;font-size:20px;font-weight:800;font-style:italic;line-height:1.1}
+.cw header em{font-style:normal;font-size:13px;display:flex;align-items:center;gap:6px;margin-top:3px}
+.cw header em::before{content:"";width:9px;height:9px;border-radius:50%;background:#3DDC84;box-shadow:0 0 0 2px rgba(255,255,255,.35)}
+.cw header button{appearance:none;flex:none;width:36px;height:36px;border:0;border-radius:10px;background:rgba(255,255,255,.2);color:#fff;cursor:pointer;display:grid;place-items:center}
+.cw header button:hover{background:rgba(255,255,255,.34)}
+.cw header button svg{width:18px;height:18px}
+.cw .av{width:46px;height:46px;border-radius:50%;border:2px solid #fff;flex:none;display:grid;place-items:center;background:#fff;color:#AB438E;font-weight:900;font-size:12px;letter-spacing:-.02em}
+.msgs{flex:1;overflow-y:auto;padding:4px 14px 12px;display:flex;flex-direction:column;gap:10px}
+.day{align-self:center;font-size:12.5px;opacity:.6;margin:4px 0 6px}
+.msg{max-width:82%;padding:11px 14px;border-radius:16px;font-size:15px;line-height:1.42}
+.msg.a{background:#fff;align-self:flex-start;border-bottom-left-radius:4px;box-shadow:0 1px 0 rgba(0,0,0,.08),0 0 0 1px rgba(0,0,0,.06);margin-left:34px;position:relative}
+.msg.a::before{content:"AVPR";position:absolute;left:-34px;bottom:0;width:26px;height:26px;border-radius:50%;background:#AB438E;color:#fff;font:900 8px/26px 'Barlow',system-ui,sans-serif;text-align:center}
+.msg.a strong{color:#AB438E;font-weight:800}
+.msg.a p{margin:0}.msg.a p+p{margin-top:.8em}
+.msg.a a{color:#AB438E}
+.msg.u{background:#AB438E;color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.typing{display:flex;gap:5px;align-items:center;min-height:42px}
+.typing i{width:7px;height:7px;border-radius:50%;background:#AB438E;opacity:.35;animation:tp 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes tp{30%{opacity:1;transform:translateY(-3px)}}
+.chips{flex:none;display:flex;gap:8px;padding:4px 14px 10px;overflow-x:auto;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chips button{appearance:none;flex:none;border:1px solid rgba(171,67,142,.35);background:#fff;color:#AB438E;font:700 13.5px/1.2 'Barlow',system-ui,sans-serif;padding:9px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.chips button:hover{background:#AB438E;color:#fff}
+.cw form{flex:none;display:flex;align-items:center;gap:6px;margin:0 12px;padding:5px 5px 5px 16px;background:#fff;border:2px solid #AB438E;border-radius:999px}
+.cw input{flex:1;min-width:0;min-height:40px;border:0;outline:0;background:none;font:16px 'Barlow',system-ui,sans-serif;color:#231F20}
+.cw form:focus-within{box-shadow:0 0 0 3px rgba(171,67,142,.25)}
+.cw form button{flex:none;width:40px;height:40px;border:0;border-radius:50%;background:#AB438E;color:#fff;cursor:pointer;display:grid;place-items:center}
+.cw form button svg{width:18px;height:18px}
+.cw .note{flex:none;margin:0;padding:8px 16px 12px;text-align:center;font-size:11.5px;line-height:1.4;opacity:.7}
+@media(max-width:760px){.cw{left:8px;right:8px;top:68px;bottom:24px;width:auto;height:auto}.cb.on{display:none}.tz{bottom:96px}}
+@media(prefers-reduced-motion:reduce){.typing i{animation:none}}
+@media(max-width:760px){.cb{bottom:84px}.tz{bottom:160px}.cw{bottom:84px}}</style></head><body>
+
+<div class="maq"><span>Maquette de refonte réalisée par EventLyx pour l'AVPR. Ce n'est pas le site officiel.</span><a href="https://corrida-abbesses.com/">Site officiel</a></div>
+
+<header class="hero" id="haut">
+ <nav class="nav" aria-label="Navigation principale"><div class="w">
+  <a class="brand" href="#haut"><b>Corrida des Abbesses</b><span>et Trail 14/18 · Remiremont</span></a>
+  <ul><li><a href="#departs">Les départs</a></li><li><a href="#trail">Trail 14/18</a></li><li><a href="#corrida">Corrida</a></li><li><a href="#pratique">Pratique</a></li><li><a href="#contact">Contact</a></li></ul>
+ </div></nav>
+ <div class="w">
+  <p class="sur">Remiremont · Vosges · depuis 1980</p>
+  <h1 class="k">26 &amp; 27 <em>déc.</em> 2026</h1>
+  <p class="lead">Deux jours de course entre Noël et le Nouvel An : le trail de nuit par le fort du Parmont le samedi, la corrida sous les illuminations du centre-ville le dimanche.</p>
+  <div class="duo">
+   <article class="billet">
+    <span class="jour">Samedi 26 décembre</span>
+    <h2 class="k">Trail 14/18</h2>
+    <p>Boulangeries Pinot · 10,1 km et 300 m D+, à la frontale, départ place de Lattre.</p>
+    <div class="bas"><span class="h">20 h 00</span><a class="btn blanc" href="https://forms.registration4all.com/EventRegistration/Register_Sport_Event.aspx?EventID=225069&amp;RORG=LSCAL"><span>S'inscrire au trail</span></a></div>
+   </article>
+   <article class="billet c">
+    <span class="jour">Dimanche 27 décembre</span>
+    <h2 class="k">Corrida des Abbesses</h2>
+    <p>E.Leclerc Saint-Étienne-lès-Remiremont · Courses des As 7,3 km, courses jeunes et Festi Run.</p>
+    <div class="bas"><span class="h">dès 15 h 30</span><a class="btn blanc" href="https://forms.registration4all.com/EventRegistration/Register_Sport_Event.aspx?EventID=225070"><span>S'inscrire à la corrida</span></a></div>
+   </article>
+  </div>
+  <div class="count" aria-label="Temps restant avant le départ du trail"><span class="t">Avant le premier départ</span><div><b id="cj">–</b>jours</div><div><b id="ch">–</b>heures</div><div><b id="cm">–</b>minutes</div></div>
+ </div>
+</header>
+
+<section class="chiffres" aria-label="En chiffres"><div class="w">
+ <div><b>1980</b><span>la première édition, 143 classés</span></div>
+ <div><b>1 500</b><span>dossards pour le Trail 14/18</span></div>
+ <div><b>2 × 350</b><span>dossards pour les Courses des As</span></div>
+ <div><b>300 m</b><span>de coursives et de tunnels dans le fort</span></div>
+</div></section>
+
+<section class="sec tab" id="departs"><div class="w">
+ <h2 class="k">Le tableau <em>des départs</em></h2>
+ <p class="intro">Tous les départs du week-end. Les horaires et les âges sont ceux du règlement 2026.</p>
+ <div class="board">
+  <div class="j">Samedi 26 décembre · place de Lattre-de-Tassigny</div>
+  <div class="row as"><span class="h">20:00</span><span class="n">Trail 14/18 Boulangeries Pinot<small>Feu d'artifice à 19 h 50, départ en une seule vague</small></span><span class="d">10,1 km · 300 m D+</span><span class="p">Nés en 2011 et avant</span><span class="tag">Frontale</span></div>
+  <div class="j">Dimanche 27 décembre · centre-ville</div>
+  <div class="row"><span class="h">15:30</span><span class="n">C1 · Éveil athlé<small>Sans chrono</small></span><span class="d">0,7 km</span><span class="p">Nés de 2018 à 2020</span><span class="tag">Jeunes</span></div>
+  <div class="row"><span class="h">15:45</span><span class="n">C2 · Poussins<small>Sans chrono</small></span><span class="d">1 km</span><span class="p">Nés en 2016 et 2017</span><span class="tag">Jeunes</span></div>
+  <div class="row"><span class="h">16:00</span><span class="n">C3 · Collèges<small>Crédit Mutuel</small></span><span class="d">1,7 km</span><span class="p">Nés de 2012 à 2015</span><span class="tag">Jeunes</span></div>
+  <div class="row as"><span class="h">16:25</span><span class="n">C4 · Course des As Hommes<small>Parrainée par E.Leclerc Saint-Étienne</small></span><span class="d">7,3 km</span><span class="p">Hommes nés en 2011 et avant</span><span class="tag">350 dossards</span></div>
+  <div class="row fete"><span class="h">17:15</span><span class="n">Festi Run<small>Déguisé, musical, sans chrono ni classement</small></span><span class="d">Le défilé</span><span class="p">Tous âges, sans PPS</span><span class="tag">Fête</span></div>
+  <div class="row as"><span class="h">17:45</span><span class="n">C5 · Course des As Dames<small>Parrainée par E.Leclerc Saint-Étienne</small></span><span class="d">7,3 km</span><span class="p">Femmes nées en 2011 et avant</span><span class="tag">350 dossards</span></div>
+ </div>
+ <p class="board-note">Podiums sur le car podium après chaque course. En cas d'intempéries, podiums en salle à 18 h 00.</p>
+</div></section>
+
+<section class="course t" id="trail">
+ <div class="duoimg" role="img" aria-label="Un traileur dans un tunnel du fort du Parmont, et Remiremont illuminée vue depuis le fort"><div style="background-image:url(tunnel.jpg)"></div><div style="background-image:url(ville.jpg)"></div></div>
+ <div class="tx">
+  <span class="lab">Samedi 26 décembre · 20 h 00</span>
+  <h2 class="k">Trail 14/18 <br>Boulangeries Pinot</h2>
+  <p>Une course nature de nuit qui file droit vers le fort du Parmont : 190 m de dénivelé en moins de 2 km dans la montée du Point du Jour, puis plus de 300 m de coursives et de tunnels, et la forêt communale pour redescendre sur Remiremont.</p>
+  <div class="fiche"><div><b>10,1 km</b><span>distance</span></div><div><b>300 m</b><span>dénivelé positif</span></div><div><b>21 h 30</b><span>barrière, vers le km 6</span></div></div>
+  <ul class="puces">
+   <li>Lampe frontale et éco-cup obligatoires, chiens interdits.</li>
+   <li>Ravitaillement au fort, collation festive à l'arrivée.</li>
+   <li>1 € par dossard reversé à l'association de sauvegarde du fort.</li>
+  </ul>
+  <div class="prix"><span>11 € jusqu'au 15/10</span><span class="now"><b>13 €</b> jusqu'au 30/11</span><span><b>15 €</b> à partir du 1/12</span></div>
+  <div class="liens"><a class="btn" href="https://forms.registration4all.com/EventRegistration/Register_Sport_Event.aspx?EventID=225069&amp;RORG=LSCAL"><span>S'inscrire au trail</span></a><a class="s" href="https://corrida-abbesses.com/wp-content/uploads/2022/12/14-18_2022.zip">Trace GPX</a><a class="s" href="https://corrida-abbesses.com/wp-content/uploads/2026/10/REGLEMENT-TRAIL-CORRIDA-DES-ABBESSSES-E-LECLERC-2026-rev-B.pdf">Règlement 2026</a></div>
+ </div>
+</section>
+
+<section class="course c" id="corrida">
+ <div class="ph" style="background-image:url(voute.jpg);background-position:center 30%" role="img" aria-label="La tête de course de la corrida sous la voûte lumineuse du centre-ville"></div>
+ <div class="tx">
+  <span class="lab">Dimanche 27 décembre · dès 15 h 30</span>
+  <h2 class="k">Corrida des Abbesses <br>E.Leclerc</h2>
+  <p>La doyenne des courses sur route de Lorraine. Un circuit fermé à la circulation en centre-ville, sous les illuminations et la voûte lumineuse, avec DJ et banda entre les courses.</p>
+  <div class="fiche"><div><b>16 h 25</b><span>As Hommes</span></div><div><b>17 h 45</b><span>As Dames</span></div><div><b>7,3 km</b><span>4 grandes boucles</span></div></div>
+  <ul class="puces">
+   <li>Top 5 récompensé, chèques cadeaux de 200, 150 et 100 € pour les 3 premiers.</li>
+   <li>Départ fontaine du Cygne, arrivée rue Charles de Gaulle.</li>
+   <li>Résultats en direct sur écran à l'arrivée.</li>
+  </ul>
+  <div class="prix"><span>11 € jusqu'au 15/10</span><span class="now"><b>13 €</b> jusqu'au 30/11</span><span><b>15 €</b> à partir du 1/12</span></div>
+  <div class="liens"><a class="btn" href="https://forms.registration4all.com/EventRegistration/Register_Sport_Event.aspx?EventID=225070"><span>S'inscrire à la corrida</span></a><a class="s" href="https://corrida-abbesses.com/wp-content/uploads/2026/10/REGLEMENT-TRAIL-CORRIDA-DES-ABBESSSES-E-LECLERC-2026-rev-B.pdf">Règlement 2026</a></div>
+ </div>
+</section>
+
+<section class="sec festi" id="festi"><div class="w">
+ <div>
+  <h2 class="k">Festi Run · 17 h 15</h2>
+  <p class="intro">Le défilé déjanté, déguisé et musical du dimanche. Ni chrono ni classement, ni limite d'âge, et pas besoin de PPS. Un jury récompense les 3 groupes les plus fous, avec un classement Familles, Associations et Entreprises.</p>
+ </div>
+ <dl>
+  <div><dt>En individuel, sur place</dt><dd>5 €</dd></div>
+  <div><dt>Famille de 2 à 5 personnes</dt><dd>10 €</dd></div>
+  <div><dt>Groupe, les 5 dossards</dt><dd>10 €</dd></div>
+  <div><dt>Associations de Remiremont, entreprises partenaires</dt><dd>gratuit</dd></div>
+ </dl>
+</div></section>
+
+<section class="sec jeunes" id="jeunes"><div class="w">
+ <h2 class="k">Les courses jeunes</h2>
+ <p class="intro">Elles servent de support au challenge Jean-Pierre Pers des écoles et des collèges. Chaque enfant reçoit une médaille et un sachet surprise.</p>
+ <div class="cartes">
+  <div class="carte"><span class="h">15 h 30</span><h3>C1 · Éveil athlé, 0,7 km</h3><p>Nés en 2018, 2019 et 2020. Sans chrono.</p></div>
+  <div class="carte"><span class="h">15 h 45</span><h3>C2 · Poussins, 1 km</h3><p>Nés en 2016 et 2017. Sans chrono.</p></div>
+  <div class="carte"><span class="h">16 h 00</span><h3>C3 · Collèges, 1,7 km</h3><p>Nés de 2012 à 2015. Podium par catégorie.</p></div>
+ </div>
+ <p class="plus">5 € en individuel. Gratuit pour les élèves inscrits par leur professeur, les licenciés AVEC et les clubs de Remiremont. Inscription sur place possible jusqu'à 45 min avant le départ (C1, C2) ou 90 min (C3). Les parents ne courent pas avec leurs enfants.</p>
+</div></section>
+
+<section class="sec" id="pratique"><div class="w">
+ <h2 class="k">Pratique</h2>
+ <div class="prat">
+  <div><h3>Dossards</h3><p>Au Palais des Congrès de Remiremont, avec une pièce d'identité.</p><p>Trail : samedi dès 17 h 00.<br>Corrida : samedi de 16 h 00 à 18 h 00, ou dimanche dès 13 h 00, jusqu'à 30 min avant chaque départ.</p></div>
+  <div><h3>Inscriptions</h3><p>En ligne uniquement pour le trail et les Courses des As, par carte bancaire.</p><p>Clôture : 20 décembre pour le trail, 22 décembre pour la corrida, à 23 h 59.</p></div>
+  <div><h3>PPS</h3><p>Le certificat médical n'est plus accepté. Sans licence FFA, il faut un PPS (pps.athle.fr, 5 €, valable 1 an). Licenciés FFA : numéro de licence 2026/2027.</p></div>
+  <div><h3>Se garer</h3><p>Parking du Champ de Mars : 500 places, à côté du Palais des Congrès et à 550 m du départ.</p></div>
+  <div><h3>Licenciés AVEC</h3><p>7 € de remise avec le code fourni par le club, avant le 30 novembre.</p><p>Les tarifs s'entendent hors frais d'inscription en ligne.</p></div>
+  <div><h3>Éco-manifestation</h3><p>Labellisée « éco-manifestation Vosges » : pas de goodies, gobelet personnel. Les dossards sont des souvenirs à garder.</p></div>
+ </div>
+</div></section>
+
+<section class="sec hist" id="histoire"><div class="w">
+ <div>
+  <h2 class="k">Depuis 1980</h2>
+  <p class="intro">Créée par Maurice Stempfel et Jean-Pierre Pers, avec Jacques Guimbert et Jean-Pierre Lecomte. Aujourd'hui, c'est la plus grande épreuve pédestre de l'hiver du Grand Est.</p>
+ </div>
+ <ol class="frise">
+  <li><b>1980</b><span>Première Corrida des Abbesses : 143 classés.</span></li>
+  <li><b>1987</b><span>Plus de 700 coureurs au départ.</span></li>
+  <li><b>2 janv. 2000</b><span>L'édition des 20 ans, décalée, échappe à la tempête de décembre 1999.</span></li>
+  <li><b>2021</b><span>La corrida fête ses 40 ans.</span></li>
+  <li><b>2024</b><span>Deux Courses des As séparées, Dames et Hommes : 700 dossards au lieu de 450.</span></li>
+ </ol>
+</div></section>
+
+<section class="sec" id="partenaires"><div class="w">
+ <h2 class="k">Partenaires</h2>
+ <p class="intro">Ils rendent le week-end possible.</p>
+ <div class="parts">
+  <div><span><small>Trail 14/18</small>Boulangeries Pinot</span></div>
+  <div><span><small>Corrida</small>E.Leclerc Saint-Étienne-lès-Remiremont</span></div>
+  <div><span>CDHV</span></div>
+  <div><span>Crédit Mutuel</span></div>
+  <div><span>Running Conseil Remiremont</span></div>
+  <div><span>Carrosserie Millet · Top Garage</span></div>
+  <div><span>Century 21 MV Remiremont</span></div>
+  <div><span>Mirettes et Écoutilles</span></div>
+  <div><span>Vosges FM</span></div>
+  <div><span>Look Ta Com</span></div>
+  <div><span>Ville de Remiremont</span></div>
+  <div><span>Département des Vosges</span></div>
+ </div>
+</div></section>
+
+<section class="benev"><div class="w">
+ <div><h2 class="k">Rejoindre les bénévoles</h2><p>Il en faut une centaine chaque année pour que le week-end ait lieu.</p></div>
+ <a class="btn" href="https://corrida-abbesses.com/devenir-benevole/"><span>Devenir bénévole</span></a>
+</div></section>
+
+<footer id="contact"><div class="w">
+ <div><h3>Nous joindre</h3><p><a href="mailto:avpr.evenements@gmail.com">avpr.evenements@gmail.com</a></p><p><a href="tel:+33626771973">06 26 77 19 73</a></p><p><a href="https://www.facebook.com/AthleVosgesPaysdeRemiremont">Facebook</a> · <a href="https://www.instagram.com/athlevosgesremiremont/">Instagram</a></p><p class="small">Athlé Vosges Pays de Remiremont (AVPR), membre d'Athlé Vosges Entente Clubs.</p></div>
+ <div><h3>PC course</h3><p>Palais des Congrès<br>1 place du Champ de Mars<br>88200 Remiremont</p></div>
+ <div><h3>À propos de cette page</h3><p class="small">Maquette proposée par EventLyx. Informations relevées le 27 novembre 2026 sur le site corrida-abbesses.com et dans le règlement 2026. Photos : AVPR, tirées du site de la course.</p></div>
+</div></footer>
+
+<div class="mbar"><a class="btn ligne" style="color:#fff" href="https://forms.registration4all.com/EventRegistration/Register_Sport_Event.aspx?EventID=225069&amp;RORG=LSCAL"><span>Trail · sam.</span></a><a class="btn" href="https://forms.registration4all.com/EventRegistration/Register_Sport_Event.aspx?EventID=225070"><span>Corrida · dim.</span></a></div>
+
+<div class="tz" id="tz"><b>Une question sur le week-end ?</b><span>Réponse en quelques secondes</span><button type="button" id="tzX" aria-label="Masquer ce message">×</button></div>
+<button class="cb" id="chatB" type="button" aria-expanded="false" aria-controls="chat" aria-label="Ouvrir l'assistant">
+ <svg class="ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.8 2 11.5c0 2.6 1.4 4.9 3.6 6.5-.2 1.2-.8 2.4-1.7 3.4 2 0 3.8-.7 5.2-1.8.9.2 1.9.4 2.9.4 5.5 0 10-3.8 10-8.5S17.5 3 12 3zM7.5 13a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm4.5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm4.5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"/></svg>
+ <svg class="ix" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+</button>
+<section class="cw" id="chat" role="dialog" aria-label="Assistant">
+ <header>
+  <div class="av" aria-hidden="true">AVPR</div>
+  <div><small>Athlé Vosges Pays de Remiremont</small><b>Corrida & Trail 14/18</b><em>Assistant de démonstration</em></div>
+  <button type="button" id="chatR" aria-label="Recommencer la conversation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 108-8 8 8 0 00-6 2.7"/><path d="M4 4v4h4"/></svg></button>
+  <button type="button" id="chatX" aria-label="Réduire l'assistant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+ </header>
+ <div class="msgs" id="msgs" aria-live="polite"></div>
+ <div class="chips" id="chips"></div>
+ <form id="chatF"><input id="chatI" type="text" autocomplete="off" placeholder="Posez votre question…" aria-label="Votre question"><button type="submit" aria-label="Envoyer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20.5l19-8.5L3 3.5v6.5l12 2-12 2z"/></svg></button></form>
+ <p class="note">Démonstration EventLyx : réponses tirées des informations de cette page.</p>
+</section>
+
+<script>
+{
+ const T=Date.parse('2026-12-26T20:00:00+01:00');
+ const tick=()=>{let s=Math.max(0,Math.floor((T-Date.now())/1000));
+  document.getElementById('cj').textContent=Math.floor(s/86400);
+  document.getElementById('ch').textContent=Math.floor(s%86400/3600);
+  document.getElementById('cm').textContent=Math.floor(s%3600/60)};
+ tick();setInterval(tick,30000);
+}
+</script>
+<script>
+{
+ const R=[[["festi", "deguis", "famille", "groupe"], "La Festi Run part le dimanche 27 décembre à 17 h 15 : un défilé déjanté, déguisé et musical, sans chrono ni classement, ouvert à tous les âges et sans PPS. 5 € en individuel, 10 € pour une famille de 2 à 5 personnes. Un jury récompense les 3 groupes les plus fous."], [["fort", "tunnel", "parmont", "coursive"], "Le Trail 14/18 traverse le fort du Parmont : plus de 300 m de coursives et de tunnels, avec un ravitaillement au fort. 1 € par dossard est reversé à l'association de sauvegarde du fort."], [["barriere", "fiscal"], "Il y a une barrière horaire à 21 h 30, à la traversée de la route du Fiscal près de la Grange Puton, vers le km 6 du Trail 14/18."], [["frontale", "lampe", "materiel", "eco-cup", "ecocup", "gobelet"], "Pour le Trail 14/18, la lampe frontale et l'éco-cup sont obligatoires. Les chiens sont interdits, même en canicross."], [["chien", "canicross"], "Les chiens sont interdits sur le Trail 14/18, même en canicross."], [["tarif", "prix", "cout", "combien", "euro", "€"], "Trail 14/18 et Courses des As : 13 € jusqu'au 30 novembre, puis 15 € (hors frais d'inscription en ligne). Courses jeunes : 5 €. Festi Run : 5 €, ou 10 € pour une famille. Les licenciés AVEC ont 7 € de remise avec le code du club, avant le 30 novembre."], [["trail", "14/18", "1418", "samedi", "nuit", "nocturne"], "Le Trail 14/18 Boulangeries Pinot part le samedi 26 décembre 2026 à 20 h 00, place de Lattre-de-Tassigny à Remiremont, après le feu d'artifice. 10,1 km et 300 m de dénivelé, de nuit, par le fort du Parmont. Ouvert aux personnes nées en 2011 et avant, 1 500 dossards."], [["dame", "femme", "feminin"], "La Course des As Dames part le dimanche 27 décembre à 17 h 45 : 7,3 km (4 grandes boucles) en centre-ville, pour les femmes nées en 2011 et avant. 350 dossards."], [["homme", "masculin"], "La Course des As Hommes part le dimanche 27 décembre à 16 h 25 : 7,3 km (4 grandes boucles) en centre-ville, pour les hommes nés en 2011 et avant. 350 dossards."], [["des as", "corrida", "7,3", "dimanche"], "Dimanche 27 décembre, en centre-ville : Course des As Hommes à 16 h 25 et Course des As Dames à 17 h 45, sur 7,3 km (4 grandes boucles). Le parcours est entièrement fermé à la circulation, sous les illuminations."], [["enfant", "jeune", "ecole", "college", "poussin", "eveil", "c1", "c2", "c3"], "Les courses jeunes ont lieu le dimanche : 15 h 30 éveil athlé (0,7 km, nés de 2018 à 2020), 15 h 45 poussins (1 km, nés en 2016 et 2017), 16 h 00 collèges (1,7 km, nés de 2012 à 2015). 5 € en individuel, gratuit via l'école, le collège ou le club."], [["retrait", "dossard", "palais"], "Les dossards se retirent au Palais des Congrès de Remiremont. Trail : samedi 26 décembre dès 17 h 00. Corrida : samedi 26 de 16 h 00 à 18 h 00, ou dimanche 27 dès 13 h 00, jusqu'à 30 min avant chaque départ. Une pièce d'identité est demandée."], [["pps", "certificat", "licence", "medical"], "Le certificat médical n'est plus accepté. Sans licence FFA, il faut un PPS (pps.athle.fr, 5 €, valable 1 an). Les licenciés FFA indiquent leur numéro de licence. Pas de PPS pour la Festi Run."], [["inscri", "cloture", "sur place", "complet", "attente"], "Les inscriptions se font en ligne uniquement pour le trail et les Courses des As : jusqu'au 20 décembre pour le trail, jusqu'au 22 décembre pour la corrida. Les courses jeunes acceptent aussi les inscriptions sur place. Les boutons « S'inscrire » de la page vous y emmènent."], [["parking", "garer", "stationn", "voiture"], "Le parking conseillé est celui du Champ de Mars (500 places), à côté du Palais des Congrès et à 550 m du départ."], [["recompense", "prix", "podium", "lot", "cadeau"], "Courses des As : top 5 récompensé, et chèques cadeaux de 200, 150 et 100 € pour les 3 premiers. Trail : coupes pour les 6 premières femmes et les 6 premiers hommes. Chaque enfant des courses jeunes reçoit une médaille."], [["resultat", "classement", "chrono"], "Les résultats s'affichent en direct sur un écran à l'arrivée, puis sur le site le soir même et sur athle.fr le lendemain."], [["benevole", "aider"], "Il faut une centaine de bénévoles chaque année. Le formulaire est sur la page « Devenir bénévole » du site."], [["histoire", "depuis", "annee", "1980", "doyenne"], "La Corrida des Abbesses existe depuis 1980 : 143 classés la première année. C'est la doyenne des courses sur route de Lorraine."], [["contact", "mail", "telephone", "joindre", "appeler"], "Vous pouvez écrire à avpr.evenements@gmail.com ou appeler le 06 26 77 19 73. L'AVPR est aussi sur Facebook et Instagram."], [["ou ", "lieu", "adresse", "depart", "remiremont"], "Le trail part de la place de Lattre-de-Tassigny. La corrida part de la fontaine du Cygne, en centre-ville de Remiremont. Le PC course est au Palais des Congrès, 1 place du Champ de Mars."], [["heure", "horaire", "quand", "date"], "Samedi 26 décembre 2026 : Trail 14/18 à 20 h 00. Dimanche 27 décembre : courses jeunes dès 15 h 30, As Hommes 16 h 25, Festi Run 17 h 15, As Dames 17 h 45."], [["bonjour", "salut", "hello", "coucou"], "Bonjour ! Posez-moi votre question sur le Trail 14/18 ou la Corrida des Abbesses."]];
+ const Q=[["🔦 Trail 14/18", "C'est quoi le Trail 14/18 ?"], ["🏃 Courses des As", "Quand partent les Courses des As ?"], ["🎭 Festi Run", "C'est quoi la Festi Run ?"], ["💶 Tarifs", "Combien coûte l'inscription ?"], ["🎽 Dossards", "Où et quand retirer mon dossard ?"], ["📄 PPS", "Faut-il un certificat médical ?"]];
+ const $=id=>document.getElementById(id),box=$('chat'),msgs=$('msgs'),btn=$('chatB'),tz=$('tz');
+ const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const norm=t=>t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+ const el=(c,t)=>{const d=document.createElement('div');d.className=c;if(t)d.textContent=t;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;return d};
+ const add=(t,c)=>el('msg '+c,t.replace(/(\d) (h|km|m|€)/g,'$1\u00a0$2').replace(/h (\d\d)/g,'h\u00a0$1'));
+ const reply=q=>{const n=norm(q);const r=R.find(x=>x[0].some(k=>n.includes(k)));return r?r[1]:"Je n'ai pas cette information. Sur le site en ligne, je transmets la question aux bénévoles de l'AVPR. En attendant, vous pouvez écrire à avpr.evenements@gmail.com ou appeler le 06 26 77 19 73."};
+ const ask=q=>{q=q.trim();if(!q)return;add(q,'u');
+  if(still){add(reply(q),'a');return}
+  const t=el('msg a typing');t.innerHTML='<i></i><i></i><i></i>';setTimeout(()=>{t.remove();add(reply(q),'a')},700)};
+ const hello=()=>{msgs.innerHTML='';el('day',"Aujourd'hui");const m=el('msg a');
+  m.innerHTML="<p>Bonjour ! 👋 Je suis l'assistant de la <strong>Corrida des Abbesses</strong> et du <strong>Trail 14/18</strong>.</p><p>Horaires, tarifs, retrait des dossards, PPS… posez-moi votre question !</p>";
+  $('chips').innerHTML='';Q.forEach(q=>{const b=document.createElement('button');b.type='button';b.textContent=q[0];b.addEventListener('click',()=>ask(q[1]));$('chips').appendChild(b)})};
+ let started=false;
+ const open=on=>{box.classList.toggle('on',on);btn.classList.toggle('on',on);btn.setAttribute('aria-expanded',on);
+  btn.setAttribute('aria-label',on?"Fermer l'assistant":"Ouvrir l'assistant");tz.classList.remove('on');
+  if(on&&!started){started=true;hello()}
+  if(on)$('chatI').focus()};
+ btn.addEventListener('click',()=>open(!box.classList.contains('on')));
+ $('chatX').addEventListener('click',()=>{open(false);btn.focus()});
+ $('chatR').addEventListener('click',()=>{hello();$('chatI').focus()});
+ tz.addEventListener('click',()=>open(true));
+ $('tzX').addEventListener('click',e=>{e.stopPropagation();tz.classList.remove('on')});
+ setTimeout(()=>{if(!started)tz.classList.add('on')},2500);
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&box.classList.contains('on')){open(false);btn.focus()}});
+ $('chatF').addEventListener('submit',e=>{e.preventDefault();const i=$('chatI');ask(i.value);i.value=''});
+}
+</script>
+</body></html>
